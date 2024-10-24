@@ -1,9 +1,10 @@
 :root {
-            --color-primary: #5c4033;
-            --color-secondary: #8b7355;
-            --color-accent: #a0522d;
-            --color-background: #f5f5dc;
-            --color-text: #3a3a3a;
+                --color-primary: #556b2f; /* Olive Green */
+		--color-secondary: #6b8e23; /* Olive Drab */
+		--color-accent: #4b5320; /* Army Green - Darker and more vibrant */
+		--color-background: #faf0e6; /* Linen */
+		--color-text: #2e3b2d; /* Deep Earthy Green */
+
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

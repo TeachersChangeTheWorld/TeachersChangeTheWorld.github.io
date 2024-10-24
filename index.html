@@ -105,6 +105,59 @@
                 font-size: 14px;
             }
         }
+
+/* Popup message box styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .popup .close-btn {
+            background-color: color: #2e7d32;" /* A deep green color for text */
+    }
+  ]
+};
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
     </style>
 </head>
 <body>
@@ -155,7 +208,7 @@
                         </svg>
                         <h3>Donate</h3>
                         <p>Support our mission financially to help us reach more teachers.</p>
-                        <a href="#" class="btn">Donate Now</a>
+                        <a href="#" class="btn" onclick="showPopup('donatePopup')">Donate Now</a>
                     </div>
                     <div class="card">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -166,7 +219,7 @@
                         </svg>
                         <h3>Volunteer</h3>
                         <p>Offer your time and skills to support our programs.</p>
-                        <a href="#" class="btn">Volunteer</a>
+                        <a href="#" class="btn" onclick="showPopup('volunteerPopup')">Volunteer</a>
                     </div>
                     <div class="card">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -174,11 +227,42 @@
                         </svg>
                         <h3>Partner</h3>
                         <p>Collaborate with us to create lasting change in education.</p>
-                        <a href="#" class="btn">Partner With Us</a>
+                        <a href="#" class="btn" onclick="showPopup('partnerPopup')">Partner With Us</a>
                     </div>
                 </div>
             </div>
         </section>
+	<div class="popup" id="donatePopup">
+            <h3>Donate</h3>
+            <p>Your donations help us provide better resources and training for teachers in rural areas. Together, we can make a difference.</p>
+            <p><strong>Bank Details:</strong></p>
+            <p>Bank Name: ABC Bank</p>
+            <p>Account Number: 123456789</p>
+            <p>Branch Code: 123-456</p>
+            <p>Reference: TCTW-Donation</p>
+            <button class="close-btn" onclick="closePopup('donatePopup')">Close</button>
+        </div>
+              <div class="popup" id="volunteerPopup">
+            <h3>Volunteer</h3>
+            <p>Join us as a volunteer and help support our mission. Your time and skills can make a significant impact in the lives of many students and teachers.</p>
+            <form>
+                <label for="volunteerName">Name</label>
+                <input type="text" id="volunteerName" name="volunteerName" placeholder="Enter your name" required>
+                <label for="volunteerEmail">Email</label>
+                <input type="email" id="volunteerEmail" name="volunteerEmail" placeholder="Enter your email" required>
+                <label for="volunteerPhone">Cell Number</label>
+                <input type="tel" id="volunteerPhone" name="volunteerPhone" placeholder="Enter your cell number" required>
+                <button type="submit" class="btn">Submit</button>
+                <button class="close-btn" onclick="closePopup('volunteerPopup')">Close</button>
+            </form>
+        </div>
+        <div class="popup" id="partnerPopup">
+            <h3>Partner With Us</h3>
+            <p>We believe in collaboration. Partner with us to bring lasting changes in the education system and empower teachers to shape the future.</p>
+            <p>By becoming our partner, you will play a crucial role in providing essential resources, training, and support to teachers in rural areas. Together, we can develop new initiatives, expand educational programs, and ensure a brighter future for countless children. Let us work together towards transforming education, one community at a time.</p>
+            <p>If you are interested in partnering with us, please contact us at <strong>partners@teacherschangetheworld.org</strong> or call <strong>+123-456-7890</strong>.</p>
+            <button class="close-btn" onclick="closePopup('partnerPopup')">Close</button>
+        </div>
         <section id="stories">
             <div class="container">
                 <h2>Inspiring Teacher Journeys</h2>
